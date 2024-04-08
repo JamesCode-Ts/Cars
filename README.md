@@ -32,9 +32,9 @@ classDiagram
     - String telefone
   }
 
-  Car "1..*" *-- "1" Model
-  Car "1*" *-- "0..*" Sale
-  Brand "1" *-- "N" Model
+  Car "1..* " *-- "1" Model
+  Car "1..* " -- "0..*" Sale
+  Car "1..*" *-- "1" Brand
   Sale "1..*" -- "1" Client
 
 

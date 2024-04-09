@@ -2,6 +2,7 @@ package br.com.automobiles.cars.model;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,20 +14,26 @@ import jakarta.persistence.ManyToOne;
 public class Car {
 	    
 	    @Id
-	    @GeneratedValue(strategy = GenerationType.AUTO)
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 	    private BigDecimal price;
 	    @Column(name = "car_year")
 	    private int year;
-	    private String codeFipe;
 	    
-	    @ManyToOne
+		private String codeFipe;
+	    
+	    @ManyToOne(cascade = CascadeType.ALL)
 	    private Brand brand;
-	    @ManyToOne
+	    @ManyToOne(cascade = CascadeType.ALL)
 	    private Model model;
 	    
 	    
-	  
+	    public Long getId() {
+				return id;
+			}
+			public void setId(Long id) {
+				this.id = id;
+			}
 	    
 		public BigDecimal getPrice() {
 			return price;

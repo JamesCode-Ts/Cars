@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Cars {
+public class Car {
 	    
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.AUTO)

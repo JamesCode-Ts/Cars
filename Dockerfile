@@ -20,7 +20,8 @@ RUN curl -L https://services.gradle.org/distributions/gradle-2.5-bin.zip -o grad
 ENV PATH="/usr/local/gradle-2.5/bin:${PATH}"
 
 # Compila o projeto com Gradle
-RUN gradle build
+RUN ./gradlew build
+
 
 # Estágio de execução
 FROM openjdk:17-jdk-slim

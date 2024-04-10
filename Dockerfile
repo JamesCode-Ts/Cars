@@ -20,8 +20,7 @@ VOLUME ["/root/.gradle/caches/"]
 
 # Install Java (Open JDK)
 RUN \
-    apt-get update && \
-    apt-get -y install unzip -y openjdk-17-jdk
+    apt-get update -y && apt-get install -y unzip  openjdk-17-jdk
 
 # Download and install Gradle
 RUN \

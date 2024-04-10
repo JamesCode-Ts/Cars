@@ -1,26 +1,9 @@
-#
-# Gradle Dockerfile
-#
-# https://github.com/lukin0110/docker-gradle
-#
+FROM ubuntu:latest AS build
 
-# Pull base image.
-FROM FROM ubuntu:latest AS build
-MAINTAINER Maarten Huijsmans <maarten.huijsmans@gmail.com>
+RUN apt-get update
+RUN apt-get install openjdk-17-jdk -y
+COPY . .
 
-# Define working directory.
-RUN mkdir -p /data/app
-WORKDIR /data/app
-
-# Define volume: your local app code directory can be mounted here
-# Mount with: -v /your/local/directory:/data/app
-VOLUME ["/data/app"]
-# Allow the host to use gradle cache, otherwise gradle will always download plugins & artifacts on every build
-VOLUME ["/root/.gradle/caches/"]
-
-# Install Java (Open JDK)
-RUN \
-    apt-get update -y && apt-get install -y unzip  openjdk-17-jdk
 
 # Download and install Gradle
 RUN \

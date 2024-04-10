@@ -2,7 +2,7 @@ FROM ubuntu:latest AS build
 
 RUN apt-get update
 RUN apt-get install openjdk-17-jdk -y
-RUN sudo apt-get install curl -y
+RUN apt-get install curl -y
 COPY . .
 
 

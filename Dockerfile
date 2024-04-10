@@ -12,9 +12,11 @@ RUN \
     unzip gradle-2.5-bin.zip && \
     rm gradle-2.5-bin.zip
 
-# Export some environment variables
-ENV GRADLE_HOME=/usr/local/gradle-2.5
-ENV PATH=$PATH:$GRADLE_HOME/bin JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
-# Define default command.
-CMD ["bash"]
+FROM openjdk:17-jdk-slim
+
+EXPOSE 8080
+
+COPY --from=build /target/deploy_render-1.0.0.jar app.jar
+
+ENTRYPOINT [ "java", "-jar", "app.jar" ]

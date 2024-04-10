@@ -8,5 +8,9 @@ public interface CarService {
 	Car findById(Long id);
 
 	Car create(Car carToCreate);
+	
+	Car update(Long id, Car entity);
+	  
+	void delete(Long id);
 
 }

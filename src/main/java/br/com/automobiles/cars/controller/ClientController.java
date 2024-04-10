@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.automobiles.cars.model.Client;
+import br.com.automobiles.cars.model.Sale;
 import br.com.automobiles.cars.service.ClientService;
 
 @RestController
@@ -33,6 +34,18 @@ public class ClientController {
 	                .buildAndExpand(clientCreated.getId())
 	                .toUri();
 	        return ResponseEntity.created(location).body(clientCreated);
+	    }
+	    
+	    @PutMapping("/{id}")
+	    public ResponseEntity<Client> update(@PathVariable Long id, @RequestBody Client clientToUpdate) {
+	        var client = clientService.update(id,clientToUpdate);
+	        return ResponseEntity.ok(client);
+	    }
+	    
+	    @DeleteMapping("/{id}")
+	    public ResponseEntity<Void> delete(@PathVariable Long id) {
+	    	clientService.delete(id);
+	        return ResponseEntity.noContent().build();
 	    }
 	}
 

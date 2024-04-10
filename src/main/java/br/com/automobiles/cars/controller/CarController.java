@@ -33,5 +33,17 @@ public class CarController {
 	                .toUri();
 	        return ResponseEntity.created(location).body(carCreated);
 	    }
+	    
+	    @PutMapping("/{id}")
+	    public ResponseEntity<Car> update(@PathVariable Long id, @RequestBody Car carToUpdate) {
+	        var car = carService.update(id,carToUpdate);
+	        return ResponseEntity.ok(car);
+	    }
+	    
+	    @DeleteMapping("/{id}")
+	    public ResponseEntity<Void> delete(@PathVariable Long id) {
+	    	carService.delete(id);
+	        return ResponseEntity.noContent().build();
+	    }
 	}
 

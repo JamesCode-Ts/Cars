@@ -2,10 +2,12 @@ FROM ubuntu:latest AS build
 
 RUN apt-get update
 RUN apt-get install openjdk-17-jdk -y
+RUN sudo apt-get install curl -y
 COPY . .
 
 
 # Download and install Gradle
+
 RUN \
     cd /usr/local && \
     curl -L https://services.gradle.org/distributions/gradle-2.5-bin.zip -o gradle-2.5-bin.zip && \

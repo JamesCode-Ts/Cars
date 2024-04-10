@@ -1,7 +1,7 @@
 # Estágio de construção
 FROM ubuntu:latest AS build
 
-# Atualiza os repositórios e instala as dependências
+# Atualiza os repositórios e instala as dependências necessárias
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk curl zip && \
     apt-get clean && \
@@ -16,8 +16,11 @@ RUN curl -L https://services.gradle.org/distributions/gradle-2.5-bin.zip -o grad
     unzip gradle-2.5-bin.zip && \
     rm gradle-2.5-bin.zip
 
+# Define a variável de ambiente PATH para incluir o diretório do Gradle
+ENV PATH="/usr/local/gradle-2.5/bin:${PATH}"
+
 # Compila o projeto com Gradle
-RUN /usr/local/gradle-2.5/bin/gradle build
+RUN gradle build
 
 # Estágio de execução
 FROM openjdk:17-jdk-slim
@@ -32,4 +35,4 @@ WORKDIR /usr/local/app
 COPY --from=build /usr/local/app/build/libs/cars-0.0.1-SNAPSHOT.jar app.jar
 
 # Define o comando de inicialização do contêiner
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app

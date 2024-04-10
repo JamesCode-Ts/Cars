@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM java:17-jre
+FROM openjdk:17-oracle
 MAINTAINER Maarten Huijsmans <maarten.huijsmans@gmail.com>
 
 # Define working directory.

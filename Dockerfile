@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM openjdk:17-oracle
+FROM FROM ubuntu:latest AS build
 MAINTAINER Maarten Huijsmans <maarten.huijsmans@gmail.com>
 
 # Define working directory.

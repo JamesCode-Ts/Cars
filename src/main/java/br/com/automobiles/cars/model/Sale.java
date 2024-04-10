@@ -2,6 +2,7 @@ package br.com.automobiles.cars.model;
 
 import java.util.Date;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,8 +17,8 @@ public class Sale {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Date saleDate;
-    private String saleTime;
-    @ManyToOne
+    private String saleHour;
+    @ManyToOne(cascade = CascadeType.ALL)
     private Client client;  
 	
 	
@@ -33,11 +34,11 @@ public class Sale {
 	public void setSaleDate(Date saleDate) {
 		this.saleDate = saleDate;
 	}
-	public String getSaleTime() {
-		return saleTime;
+	public String getSaleHour() {
+		return saleHour;
 	}
-	public void setSaleTime(String saleTime) {
-		this.saleTime = saleTime;
+	public void setSaleHour(String saleHour) {
+		this.saleHour = saleHour;
 	}
 	public Client getClient() {
 		return client;

@@ -36,4 +36,4 @@ WORKDIR /usr/local/app
 COPY --from=build /usr/local/app/build/libs/cars-0.0.1-SNAPSHOT.jar app.jar
 
 # Define o comando de inicialização do contêiner
-ENTRYPOINT ["java", "-jar", "app
+ENTRYPOINT ["java", "-jar", "app.jar"]

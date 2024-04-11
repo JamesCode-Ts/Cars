@@ -49,6 +49,14 @@ classDiagram
   Sale "1..*" -- "1" Client
 
 ```
+
+## 📚 Sobre o Projeto
+
+O projeto representa uma aplicação web para uma concessionária de automóveis, tendo por sua vez os CRUDs, e um sistema com seus clientes, carros e vendas.
+
+Podendo assim ter um gerenciamento de uma agência de veículos e o monitoramento de suas partes.
+
+
 ### Documentação Interativa
 
 Para explorar e testar os endpoints da API, consulte a [Documentação interativa](https://car-dealership-relj.onrender.com/swagger-ui/index.html#/).

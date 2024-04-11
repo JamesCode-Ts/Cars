@@ -7,7 +7,7 @@ Java RESTful API criada para o Desafio de projeto na DIO.
  - **Spring Boot 3**: Trabalhei com a mais nova versão do Spring Boot, que maximiza a produtividade do desenvolvedor por meio de sua poderosa premissa de autoconfiguração;
  - **Spring Data JPA**: Foi utilizada para lidar e simplificar nossa camada de acesso aos dados, facilitando a integração com bancos de dados SQL;
  - **OpenAPI (Swagger)**: Foi criado uma documentação de API eficaz e fácil de entender usando a OpenAPI (Swagger), perfeitamente alinhada com a alta produtividade que o Spring Boot oferece;
- - **Render**: Para o deploy da aplicação usando docker.
+ - **Render**: Foi utilizado o Render como alternativa ao Railway para deploy da aplicação utilizando docker.
 
 
 ## Diagrama de Classes (Domínio da API)

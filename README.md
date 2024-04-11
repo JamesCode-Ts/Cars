@@ -1,6 +1,6 @@
 # Concessionária de Carros
 
-Java RESTful API criada para o Desafio de projeto.
+Java RESTful API criada para o Desafio de projeto na DIO.
 
 ## Principais Tecnologias
  - **Java 17**: Utilizei a versão LTS do Java para tirar vantagem das últimas inovações que essa linguagem robusta e amplamente utilizada oferece;
@@ -54,7 +54,7 @@ classDiagram
 
 O projeto representa uma aplicação web para uma concessionária de automóveis, tendo por sua vez os CRUDs, e um sistema com seus clientes, carros e vendas.
 
-Podendo assim ter um gerenciamento de uma agência de veículos e o monitoramento de suas partes.
+Podendo assim ter um gerenciamento de uma agência de veículos e o monitoramento das partes envolvidas.
 
 
 ### Documentação Interativa

@@ -57,6 +57,31 @@ O projeto representa uma aplicação web para uma concessionária de automóveis
 Podendo assim ter um gerenciamento de uma agência de veículos e o monitoramento das partes envolvidas.
 
 
+Para usar este projeto, siga estas etapas:
+
+1. Clone este repositório para o seu computador:
+
+```bash
+git clone github.com/JamesCode-Ts/car_dealership
+```
+
+2. Configuração do Ambiente Java com SDKMAN!
+
+```bash
+curl -s "https://get.sdkman.io" | bash
+sdk install java 17.0.6-tem
+sdk use java 17.0.6-tem
+```
+
+3. Execute a aplicação na ide de sua preferencia.
+   
+4. Para realizar testes e consultas no localhost:
+```bash
+ http://localhost:8080/swagger-ui/index.html
+```
+
+
+
 ### Documentação Interativa
 
 Para explorar e testar os endpoints da API, consulte a [Documentação interativa](https://car-dealership-relj.onrender.com/swagger-ui/index.html#/).
